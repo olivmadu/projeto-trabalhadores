@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Trabalhadores</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Gestão de Trabalhadores e Treinamentos</header>
+    <div class="container">
+        <h2>Lista de Trabalhadores</h2>
+        <table id="tabela-trabalhadores" class="styled-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>CPF</th>
+                    <th>Cargo</th>
+                    <th>Empresa</th>
+                    <th>PEAT Básico</th>
+                    <th>PEAT Básico ID</th>
+                    <th>PEAT Continuado</th>
+                    <th>PEAT Continuado ID</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- linhas dinâmicas  adicionadas pelo JavaScript -->
+            </tbody>
+        </table>
+        <div id="mensagem-sucesso" class="mensagem"></div>
+        <a href="index.html" class="btn-voltar">Voltar ao Dashboard</a>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
+

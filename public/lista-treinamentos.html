@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Treinamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Gestão de Trabalhadores e Treinamentos</header>
+    <div class="container">
+        <h2>Lista de Treinamentos</h2>
+
+        <!-- Botões para selecionar o tipo -->
+        <div id="tipo-container">
+            <button class="btn-tipo" data-tipo="Básico">Treinamentos Básicos</button>
+            <button class="btn-tipo" data-tipo="Continuado">Treinamentos Continuados</button>
+            <button class="btn-tipo" data-tipo="Outro">Outros Treinamentos</button>
+        </div>
+
+        <!-- Contêiner para exibir os treinamentos separados por tipo -->
+        <div id="treinamentos-container">
+            <div id="treinamentos-basicos" class="tipo-treinamentos" style="display: none;">
+                <!-- Treinamentos básicos por data -->
+            </div>
+            <div id="treinamentos-continuados" class="tipo-treinamentos" style="display: none;">
+                <!-- Treinamentos continuados por data -->
+            </div>
+            <div id="treinamentos-outros" class="tipo-treinamentos" style="display: none;">
+                <!-- Outros treinamentos -->
+            </div>
+        </div>
+
+        <!-- Modal para detalhes -->
+        <div id="modal-detalhes" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span id="fechar-modal" class="close">&times;</span>
+                <h3>Detalhes do Treinamento</h3>
+                <div id="detalhes-treinamento">
+                    <!-- Detalhes do treinamento preenchidos dinamicamente -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal para confirmação de exclusão -->
+        <div id="modal-exclusao" class="modal" style="display: none;">
+            <div class="modal-content">
+                <h3>Confirmação de Exclusão</h3>
+                <p>Tem certeza de que deseja excluir este treinamento?</p>
+                <div>
+                    <button id="confirmar-exclusao" class="btn-excluir">Excluir</button>
+                    <button id="cancelar-exclusao" class="btn-cancelar">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <a href="index.html" class="btn-voltar">Voltar ao Dashboard</a>
+    </div>
+
+    <script src="app.js" type="module"></script>
+</body>
+</html>
+
+

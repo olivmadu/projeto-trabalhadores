@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Gestão de trabalhadores e treinamentos</header>
+    <main class="dashboard-container">
+        <div class="row">
+            <a href="lista-empresas.html" class="btn-dashboard btn-yellow">Lista de empresas</a>
+            <a href="lista-trabalhadores.html" class="btn-dashboard btn-yellow">Lista de trabalhadores</a>
+        </div>
+        <div class="row">
+            <a href="cadastrar-empresa.html" class="btn-dashboard btn-green">Cadastrar empresa</a>
+            <a href="cadastrar-trabalhador.html" class="btn-dashboard btn-green">Cadastrar trabalhador</a>
+            <a href="cadastrar-treinamento.html" class="btn-dashboard btn-green">Cadastrar treinamento</a>
+            <a href="lista-treinamentos.html" class="btn-dashboard btn-green">Relatórios</a>
+        </div>
+
+        <!-- Barra de Pesquisa -->
+        <input type="text" id="input-pesquisa" placeholder="Pesquise por nome ou ID do trabalhador" />
+
+        <!-- Tabela Oculta -->
+        <div id="tabela-container">
+            <table id="tabela-trabalhadores" class="styled-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                        <th>CPF</th>
+                        <th>Cargo</th>
+                        <th>Empresa</th>
+                        <th>PEAT Básico</th>
+                        <th>PEAT Continuado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Linhas dinâmicas  adicionadas pelo JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="app.js" type="module"></script>
+</body>
+</html>

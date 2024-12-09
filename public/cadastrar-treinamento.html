@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Treinamento</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Gestão de trabalhadores e treinamentos</header>
+    <div class="container">
+        <h2>Cadastrar Treinamento</h2>
+        <form id="form-treinamento">
+            <select id="tipo-treinamento" required>
+                <option value="">Selecione o Tipo</option>
+                <option value="Básico">Básico</option>
+                <option value="Continuado">Continuado</option>
+                <option value="Outro">Outro</option>
+            </select>
+            <input type="date" id="validade-treinamento" required>
+            <input type="text" id="instrutor" placeholder="Instrutor" required>
+            <textarea id="observacoes-treinamento" placeholder="Observações sobre o treinamento"></textarea>
+            <button type="submit">Cadastrar</button>
+        </form>
+        <div id="mensagem-sucesso" class="mensagem"></div>
+        <a href="index.html">Voltar ao Dashboard</a>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
+
+

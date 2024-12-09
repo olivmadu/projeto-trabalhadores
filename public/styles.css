@@ -1,0 +1,304 @@
+:root {
+    --cor001: #838726;
+    --cor002: #3E4014;
+    --cor003: #A68E17;
+    --cor004: #40372F;
+    --cor005: #F2F2F2;
+}
+
+/* Layout Global */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--cor005);
+    color: var(--cor004);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+header {
+    width: 100%;
+    background-color: var(--cor002);
+    color: var(--cor005);
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Contêiner Principal */
+.container {
+    max-width: 1500px; 
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--cor005);
+    color: var(--cor004);
+    text-align: center;
+    border-radius: 8px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+/* Botões de Dashboard */
+.btn-dashboard {
+    flex: 1;
+    text-align: center;
+    text-decoration: none;
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var(--cor005);
+    border-radius: 5px;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    min-width: 150px;
+}
+
+.btn-dashboard:hover {
+    transform: scale(1.05);
+}
+
+.btn-yellow {
+    background-color: var(--cor003);
+}
+
+.btn-green {
+    background-color: var(--cor002);
+}
+
+/* Formulários e Inputs */
+button,
+input[type="text"],
+input[type="date"],
+select {
+    display: block;
+    width: 80%;
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--cor002);
+    color: var(--cor005);
+}
+
+/* Botões Padrão */
+button {
+    background-color: var(--cor001);
+    color: var(--cor005);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: var(--cor003);
+}
+
+/* Links */
+a {
+    text-decoration: none;
+    color: var(--cor005);
+    background-color: var(--cor004);
+    padding: 10px 20px;
+    margin: 10px;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a:hover {
+    background-color: var(--cor002);
+}
+
+/* Tabelas */
+table {
+    width: 100%;
+    max-width: 100%;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: var(--cor005);
+    color: var(--cor004);
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+table th,
+table td {
+    border: 1px solid var(--cor002);
+    padding: 10px 15px; 
+    text-align: center;
+}
+
+table th {
+    background-color: var(--cor001);
+    color: var(--cor005);
+}
+
+table td {
+    word-break: break-word;
+}
+
+
+/* Botão de Excluir */
+.btn-excluir {
+    background-color: var(--cor001);
+    color: var(--cor005);
+    border: none;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-excluir:hover {
+    background-color: var(--cor003);
+}
+
+/* Botões de Tipo de Treinamento */
+#tipo-container {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-tipo {
+    padding: 10px 20px;
+    border: 1px solid var(--cor003);
+    background-color: var(--cor003);
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    color: var(--cor005);
+    transition: background-color 0.2s ease;
+}
+
+.btn-tipo:hover {
+    background-color: var(--cor001);
+}
+
+/* Treinamentos */
+#treinamentos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Cartões de Treinamento */
+.card {
+    border: 1px solid var(--cor003);
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    background-color: var(--cor005);
+    color: var(--cor004);
+    margin: 15px;
+    transition: box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.card h4 {
+    margin: 0;
+    color: var(--cor002);
+}
+
+.card p {
+    font-size: 14px;
+    color: var(--cor003);
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: var(--cor005);
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid var(--cor003);
+    border-radius: 8px;
+    width: 60%;
+    color: var(--cor004);
+}
+
+/* Botão Fechar Modal */
+.close {
+    color: var(--cor003);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--cor001);
+}
+
+/* Botões de Data e Voltar */
+.btn-data {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: var(--cor001);
+    color: var(--cor005);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-data:hover {
+    background-color: var(--cor002);
+}
+
+.btn-voltar {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: var(--cor003);
+    color: var(--cor005);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-voltar:hover {
+    background-color: var(--cor001);
+}
+
+#tabela-container {
+    display: none; 
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Trabalhador</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>Gestão de trabalhadores e treinamentos</header>
+    <div class="container">
+        <h2>Cadastrar Trabalhador</h2>
+        <form id="form-trabalhador">
+            <!-- Nome -->
+            <input type="text" id="nome" placeholder="Nome" required>
+            
+            <!-- CPF -->
+            <input type="text" id="cpf" placeholder="CPF" required>
+            
+            <!-- Cargo -->
+            <input type="text" id="cargo" placeholder="Cargo" required>
+            
+            <!-- Empresa -->
+            <select id="empresa-id" required>
+                <option value="">Selecione a Empresa</option>
+            </select>
+            
+            <!-- PEAT Básico -->
+            <div class="peat-container">
+                <label for="peat-basico">PEAT Básico:</label>
+                <input type="date" id="peat-basico-data" placeholder="Data do PEAT Básico">
+                <select id="peat-basico-link">
+                    <option value="">Selecione o Treinamento Básico</option>
+                </select>
+            </div>
+            
+            <!-- PEAT Continuado -->
+            <div class="peat-container">
+                <label for="peat-continuado">PEAT Continuado:</label>
+                <input type="date" id="peat-continuado-data" placeholder="Data do PEAT Continuado">
+                <select id="peat-continuado-link">
+                    <option value="">Selecione o Treinamento Continuado</option>
+                </select>
+            </div>
+
+            <!-- Botão de Cadastro -->
+            <button type="submit">Cadastrar</button>
+        </form>
+        
+        <!-- Mensagem de Sucesso -->
+        <div id="mensagem-sucesso" class="mensagem"></div>
+        
+        <!-- Link para o Dashboard -->
+        <a href="index.html">Voltar ao Dashboard</a>
+    </div>
+    <script src="app.js" type="module"></script>
+</body>
+</html>
+
