@@ -4,43 +4,51 @@
     --cor003: #A68E17;
     --cor004: #40372F;
     --cor005: #F2F2F2;
+    --cor006: #ffffff;
+    --cor007: #6A8E35;
 }
 
-/* Layout Global */
+/*layout global*/
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background-color: var(--cor005);
-    color: var(--cor004);
+    color: #333;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    line-height: 1.6;
 }
 
 header {
     width: 100%;
-    background-color: var(--cor002);
-    color: var(--cor005);
+    background-color: var(--cor001); 
+    color: var(--cor006); 
     text-align: center;
     padding: 1rem;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-weight: bold;
-}
-
-/* Contêiner Principal */
-.container {
-    max-width: 1500px; 
-    margin: 0 auto;
-    padding: 20px;
-    background-color: var(--cor005);
-    color: var(--cor004);
-    text-align: center;
-    border-radius: 8px; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Dashboard */
+
+/*contêiner principal*/
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: var(--cor005);
+    color: var(--cor004);
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    border: 1px solid var(--cor006); 
+}
+
+
+/*dashboard*/
 .dashboard-container {
     display: flex;
     flex-direction: column;
@@ -58,7 +66,7 @@ header {
     gap: 1rem;
 }
 
-/* Botões de Dashboard */
+/*botões dashboard*/
 .btn-dashboard {
     flex: 1;
     text-align: center;
@@ -84,35 +92,55 @@ header {
     background-color: var(--cor002);
 }
 
-/* Formulários e Inputs */
-button,
+/*formulários e inputs*/
 input[type="text"],
 input[type="date"],
 select {
     display: block;
-    width: 80%;
-    margin: 10px auto;
+    width: 100%; 
+    margin: 15px 0;
     padding: 10px;
     font-size: 1rem;
-    border: none;
-    border-radius: 5px;
-    background-color: var(--cor002);
-    color: var(--cor005);
+    border: 1px solid #CCCCCC; 
+    border-radius: 5px; 
+    background-color: #F7F9FC; 
+    color: #333;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
-/* Botões Padrão */
+input[type="text"]:focus,
+input[type="date"]:focus,
+select:focus {
+    outline: none;
+    border-color: var(--cor007);
+    box-shadow: 0px 0px 6px rgba(106, 142, 53, 0.4);
+}
+
+
+/*botões padrão*/
 button {
-    background-color: var(--cor001);
-    color: var(--cor005);
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--cor006);
+    background-color: var(--cor007);
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 button:hover {
-    background-color: var(--cor003);
+    background-color: #577428;
+    transform: scale(1.02);
 }
 
-/* Links */
+
+/*links*/
 a {
     text-decoration: none;
     color: var(--cor005);
@@ -128,52 +156,95 @@ a:hover {
     background-color: var(--cor002);
 }
 
-/* Tabelas */
+/*tabelas*/
+#tabela-container {
+    width: 100%;
+    overflow-x: auto; 
+    max-width: 100%;
+}
+
 table {
     width: 100%;
-    max-width: 100%;
     border-collapse: collapse;
-    margin: 20px auto;
     background-color: var(--cor005);
     color: var(--cor004);
-    table-layout: fixed;
+    table-layout: fixed; 
     word-wrap: break-word;
 }
 
 table th,
 table td {
     border: 1px solid var(--cor002);
-    padding: 10px 15px; 
+    padding: 10px 15px;
     text-align: center;
+    vertical-align: middle; 
 }
 
 table th {
-    background-color: var(--cor001);
-    color: var(--cor005);
+    background-color: #6A8E35; 
+    color: var(--cor006);
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase; 
 }
 
-table td {
-    word-break: break-word;
+table tbody tr:nth-child(odd) {
+    background-color: #F7F9F6;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: var(--cor006);
+}
+
+table tbody tr:hover {
+    background-color: #e5e9e5;
+}
+
+textarea {
+    display: block;
+    width: 100%;
+    margin: 15px 0; 
+    padding: 10px; 
+    font-size: 1rem; 
+    font-family: Arial, sans-serif; 
+    border: 1px solid var(--cor003); 
+    border-radius: 5px; 
+    background-color: var(--cor005); 
+    color: var(--cor004); 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    resize: vertical; 
+    min-height: 100px; 
+    max-height: 300px; 
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--cor007); 
+    box-shadow: 0px 0px 6px rgba(106, 142, 53, 0.4); 
 }
 
 
-/* Botão de Excluir */
 .btn-excluir {
-    background-color: var(--cor001);
-    color: var(--cor005);
+    background-color: #E63946;
+    color: var(--cor006);
     border: none;
-    padding: 8px 16px;
-    font-size: 0.9rem;
-    border-radius: 5px;
+    padding: 6px 12px; 
+    font-size: 0.9rem; 
+    border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+    display: inline-block;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
 
 .btn-excluir:hover {
-    background-color: var(--cor003);
+    background-color: #C91D28; 
+    transform: scale(1.05); 
 }
 
-/* Botões de Tipo de Treinamento */
+
+/*botões de tipo de treinamento*/
 #tipo-container {
     margin-bottom: 20px;
     display: flex;
@@ -195,14 +266,14 @@ table td {
     background-color: var(--cor001);
 }
 
-/* Treinamentos */
+/* treinamentos */
 #treinamentos-container {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
 
-/* Cartões de Treinamento */
+/*cartões de treinamento */
 .card {
     border: 1px solid var(--cor003);
     border-radius: 8px;
@@ -229,7 +300,7 @@ table td {
     color: var(--cor003);
 }
 
-/* Modal */
+/*modal*/
 .modal {
     display: none;
     position: fixed;
@@ -252,7 +323,6 @@ table td {
     color: var(--cor004);
 }
 
-/* Botão Fechar Modal */
 .close {
     color: var(--cor003);
     float: right;
@@ -266,7 +336,6 @@ table td {
     color: var(--cor001);
 }
 
-/* Botões de Data e Voltar */
 .btn-data {
     display: inline-block;
     margin: 10px;
@@ -284,21 +353,62 @@ table td {
 }
 
 .btn-voltar {
-    display: block;
-    margin: 20px auto;
-    padding: 10px 20px;
-    background-color: var(--cor003);
-    color: var(--cor005);
+    background-color: #F4C430;
+    color: black; 
     border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.2s ease;
 }
 
 .btn-voltar:hover {
-    background-color: var(--cor001);
+    background-color: #D4A820; 
 }
 
 #tabela-container {
     display: none; 
+    overflow-x: auto;
+    max-width: 100%;
+}
+
+/* responsividade */
+@media screen and (max-width: 768px) {
+    .dashboard-container {
+        max-width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .row {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-dashboard {
+        min-width: 100%;
+        margin: 0.5rem 0;
+    }
+
+    table, th, td {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .btn-dashboard {
+        font-size: 0.9rem;
+        padding: 0.5rem;
+    }
+
+    table, th, td {
+        font-size: 0.8rem;
+        padding: 5px;
+    }
+    header {
+        font-size: 1.2rem;
+    }
 }
