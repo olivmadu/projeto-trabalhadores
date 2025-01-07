@@ -26,58 +26,7 @@ const db = getFirestore(app);
 let basicos = [];
 let continuados = [];
 
-// ---------------------- FUNÇÕES DE MENSAGEM ---------------------- //
-function mostrarMensagemSucesso(mensagem) {
-    const mensagemDiv = document.getElementById("mensagem-sucesso");
-    if (mensagemDiv) {
-        mensagemDiv.textContent = mensagem;
-        mensagemDiv.style.display = "block";
-        mensagemDiv.style.color = "green";
-        setTimeout(() => mensagemDiv.style.display = "none", 3000);
-    }
-}
 
-function mostrarMensagemErro(mensagem) {
-    const mensagemDiv = document.getElementById("mensagem-sucesso");
-    if (mensagemDiv) {
-        mensagemDiv.textContent = mensagem;
-        mensagemDiv.style.display = "block";
-        mensagemDiv.style.color = "red";
-        setTimeout(() => mensagemDiv.style.display = "none", 3000);
-    }
-}
-
-// ---------------------- FUNÇÕES DE SUGESTÕES ---------------------- //
-async function sugerirTrabalhadores(inputElement) {
-    const inputValue = inputElement.value.toLowerCase();
-    const suggestionsContainer = inputElement.nextElementSibling;
-
-    if (inputValue.length < 2) {
-        suggestionsContainer.innerHTML = "";
-        return;
-    }
-
-    const querySnapshot = await getDocs(collection(db, "trabalhadores"));
-    const suggestions = [];
-
-    querySnapshot.forEach(doc => {
-        const trabalhador = doc.data();
-        if (trabalhador.nome.toLowerCase().includes(inputValue)) {
-            suggestions.push(trabalhador.nome);
-        }
-    });
-
-    suggestionsContainer.innerHTML = suggestions
-        .map(nome => `<div class="suggestion">${nome}</div>`)
-        .join("");
-
-    suggestionsContainer.querySelectorAll(".suggestion").forEach(item => {
-        item.addEventListener("click", () => {
-            inputElement.value = item.textContent;
-            suggestionsContainer.innerHTML = "";
-        });
-    });
-}
 
 // ---------------------- EMPRESAS ---------------------- //
 async function adicionarEmpresa(nome) {
